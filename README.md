@@ -56,3 +56,11 @@ adapter.Fill(dt);
 DT.ItemsSource = dt.DefaultView;
 ```
 
+## insert image in bd
+```
+UPDATE ProductTable 
+SET ProductImage = 
+      (SELECT * FROM OPENROWSET(BULK N'D:\Downloads\TheLastOfUs.png', SINGLE_BLOB) AS image)
+WHERE ProductId = 1
+```
+
