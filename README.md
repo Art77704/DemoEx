@@ -64,3 +64,15 @@ SET ProductImage =
 WHERE ProductId = 1
 ```
 
+## Add data to combobox
+```
+SqlCommand cmd = new SqlCommand("select * from UserRole", conn);
+SqlDataReader sqlDataReader = cmd.ExecuteReader();
+string RoleN;
+while (sqlDataReader.Read())
+{
+    RoleN = Convert.ToString(sqlDataReader.GetValue(1));
+    Role_CMB.Items.Add($"{RoleN}");
+
+}
+```
