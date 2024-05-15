@@ -29,6 +29,12 @@ Users_DT.ItemsSource = AppConnect.modelOdb.UserInfo.ToList();
 ```
 delete UserInfo where IdUser between 7 and 7
 DataRowView drv = (DataRowView)DT.SelectedItem;
+or
+var hotelsForRemoving = DT.SelectedItems.Cast<Hotel>().ToList();
+
+cont.Hotels.RemoveRange(hotelsForRemoving);
+cont.SaveChanges();
+dt.ItemsSource=cont.Hotels.ToList();
 ```
 
 ## update data
